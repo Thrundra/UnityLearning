@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace EntityTest.Core
 {
-    public static class MainEngine
+    internal class MainEngine
     {
-        public static void runEngine()
+        internal void RunProcess()
         {
-
+            Console.WriteLine("Hello World!");
+            
         }
     }
 }
