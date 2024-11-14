@@ -19,7 +19,7 @@ public class game : MonoBehaviour
             //Instantiate(prefab);
             CreateObject();
         }
-        else if(Input.GetKeyDown(newGameKey)
+        else if(Input.GetKeyDown(newGameKey))
         {
             BeginNewGame();
         }
