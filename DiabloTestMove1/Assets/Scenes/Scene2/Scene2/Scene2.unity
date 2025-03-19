@@ -13,7 +13,7 @@ OcclusionCullingSettings:
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 9
+  serializedVersion: 10
   m_Fog: 0
   m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_FogMode: 3
@@ -42,8 +42,8 @@ RenderSettings:
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 12
-  m_GIWorkflowMode: 1
+  serializedVersion: 13
+  m_BakeOnSceneLoad: 0
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -66,9 +66,6 @@ LightmapSettings:
     m_LightmapParameters: {fileID: 0}
     m_LightmapsBakeMode: 1
     m_TextureCompression: 1
-    m_FinalGather: 0
-    m_FinalGatherFiltering: 1
-    m_FinalGatherRayCount: 256
     m_ReflectionCompression: 2
     m_MixedBakeMode: 2
     m_BakeBackend: 1
@@ -96,7 +93,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 20201, guid: 0000000000000000f000000000000000, type: 0}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -375,9 +372,8 @@ Light:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 949551830}
   m_Enabled: 1
-  serializedVersion: 10
+  serializedVersion: 11
   m_Type: 1
-  m_Shape: 0
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
   m_Intensity: 1
   m_Range: 10
@@ -427,8 +423,12 @@ Light:
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
+  m_ForceVisible: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+  m_LightUnit: 1
+  m_LuxAtDistance: 1
+  m_EnableSpotReflector: 1
 --- !u!4 &949551832
 Transform:
   m_ObjectHideFlags: 0
@@ -498,6 +498,7 @@ Transform:
   m_Children:
   - {fileID: 1374073882}
   - {fileID: 1375082581}
+  - {fileID: 1468147952}
   m_Father: {fileID: 1924244650}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1217125172
@@ -557,6 +558,7 @@ Terrain:
   m_DetailObjectDensity: 1
   m_HeightmapPixelError: 5
   m_SplatMapDistance: 1000
+  m_HeightmapMinimumLODSimplification: 0
   m_HeightmapMaximumLOD: 0
   m_ShadowCastingMode: 2
   m_DrawHeightmap: 1
@@ -605,6 +607,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_SerializedVersion: 0
   m_AgentTypeID: 0
   m_CollectObjects: 0
   m_Size: {x: 10, y: 10, z: 10}
@@ -691,7 +694,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 968519803}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: afdb38b71060eee4aa6d6b1fdd56d045,
         type: 3}
@@ -701,7 +704,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: afdb38b71060eee4aa6d6b1fdd56d045,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 1000
+      value: 999.99994
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: afdb38b71060eee4aa6d6b1fdd56d045,
         type: 3}
@@ -711,17 +714,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: afdb38b71060eee4aa6d6b1fdd56d045,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 511.68243
+      value: 12.128326
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: afdb38b71060eee4aa6d6b1fdd56d045,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.0017127991
+      value: -4.536995
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: afdb38b71060eee4aa6d6b1fdd56d045,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 142.94695
+      value: 12.718552
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: afdb38b71060eee4aa6d6b1fdd56d045,
         type: 3}
@@ -773,6 +776,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: afdb38b71060eee4aa6d6b1fdd56d045, type: 3}
+--- !u!4 &1468147952 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: afdb38b71060eee4aa6d6b1fdd56d045,
+    type: 3}
+  m_PrefabInstance: {fileID: 1379709253}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1560165956
 GameObject:
   m_ObjectHideFlags: 0
@@ -1054,5 +1063,4 @@ SceneRoots:
   - {fileID: 1325267224}
   - {fileID: 1924244650}
   - {fileID: 1807472628}
-  - {fileID: 1379709253}
   - {fileID: 897143647}
